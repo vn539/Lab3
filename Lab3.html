@@ -1,0 +1,175 @@
+-<div data-role="http://jsfiddle.net/#savepage" id="page1"></div>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=weather"></script> 
+<div data-role="page" id="page1">
+    <div data-role="header">
+         <h1> Restaurant Mobile Web Client Application </h1>
+
+    </div>
+    <div data-role="content">
+        <p><a href="#MenuEventPage" data-role="button"> Menu </a>
+        </p>
+        <p><a href="#Order1Online" data-role="button"> Order Online</a>
+        </p>
+        <p><a href="#LocationEventPage" data-role="button"> Local Locations </a>
+
+        </p>
+      <p><a id ="MashUp" href="#MashUpPage" data-role="button"> Mash Up</a> 
+
+        </p>
+        
+        <p><a href="#AboutEventPage" data-role="button"> About Us</a>
+
+        </p>
+        
+    </div>
+</div>
+
+            
+<div data-role="page" id="LocationEventPage">
+    <div data-role="header"> <a data-rel="back" data-icon="home">Home</a>
+        <h1>Local Locations </h1>
+    </div>
+    <div data-role="content"></div>
+   <button id="btnFind">Show Locations</button>
+    
+    <div id="locationsmap">
+        <div id="map"></div>
+        <button id="btnDirLocation1">Direction To Location 1</button>
+        <button id="btnDirLocation2">Direction To Location 2</button>
+        <div id="directions-panel"></div>
+    </div>
+    <div id="map-canvas"></div>
+</div>
+<div data-role="page" id="Order1Online">
+ <div data-role="header"> <a data-rel="back" data-icon="home">Home</a>
+<h1> Order Online </h1>
+</div>
+<div data-role="content"></div>
+    <div id="MenuItems" data-role="fieldcontain"> 
+        <h2>Available Items </h2>
+        <div id="menuitemprice">Select menu item for price.</div>
+                <li>French Fries</li>
+                <li>Sweet Potato Fries</li>
+                <li>Spinich Dip</li>
+                <li>Garden Salad</li>
+                <li>Ceaser Salad</li>
+                <li>Chicken Pasta</li>
+                <li>Chicken Sandwich</li>
+</div>
+
+   
+   <input type="text" placeholder="Please choose from the list above" id="inputString" style="width:50%" /> 
+
+<table>
+    <tr>
+        <td>
+    <button id = "addItems" onclick="saveStatusLocally()">Add Items</button>
+    </td>
+
+    <td>
+<button id = "reviewItems" onclick="readStatus()">Review Items Added</button>
+    </td>
+    <td>
+        <button id ="clearItems" onclick="clearStorage()">Clear Items</button>
+    </td>
+    </tr>
+    </table>
+<div id="write"></div>
+ <!--   <div data-role="fieldcontain">
+    <label for="Available Items"> </label> 
+    <input id="submitbutton" type="button" value="ADD Items" width="48" height="48"> -->
+
+   
+    
+   <!-- <ul data-role="listview" data-inset="true" id="OrderOnline" style="min-width:100px;" data-theme="r">
+                <li>French Fries</li>
+                <li>Sweet Potato Fries</li>
+                <li>Spinich Dip</li>
+                <li>Garden Salad</li>
+                <li>Ceaser Salad</li>
+                <li>Chicken Pasta</li>
+                <li>Chicken Sandwich</li>
+            </ul> -->
+</div>
+
+
+<div data-role="page" id="MashUpPage">
+    <div data-role="header"> <a data-rel="back" data-icon="home">Home</a>
+        <h1>Mash Up </h1>
+    </div>
+    <div data-role="content">
+<button id="btnShowWeather"> Show Weather </button>
+      <div id="Weather"></div> 
+        <div id="chart">
+            <section id="left-column"> 
+        <h2>Finance chart </h2>
+    <img src="http://chart.finance.yahoo.com/z?s=DRI&t=1d&q=l&z=l&p=m50,m200
+" height="150" width="400"/>
+            </section>
+        </div> 
+    </div>
+</div> 
+
+
+<div data-role="page" id="AboutEventPage">
+    <div data-role="header"> <a data-rel="back" data-icon="home">Home</a>
+        <h1>About Us </h1>
+    </div>
+    <div data-role="content"></div>
+    <div data-role="fieldcontain">
+    <label for="About Us"> </label>
+        
+     <div id="AboutUs" word-wrap="break-word" class="ui-overlay-shadow ui-corner-all">OGarden is a family of more than 780 local restaurants committed to providing every guest with a genuine Italian dining experience.Here, in a quaint Tuscan village, more than 1,200 of our chefs and managers have been inspired by authentic Italian cuisine.To capture the welcoming atmosphere of a Tuscan farmhouse, we’re redesigning more than 350 of our restaurants.</div>
+    </div>	
+
+</div>
+
+
+
+<div data-role="page" id="MenuEventPage">
+    <div data-role="header"> <a data-rel="back" data-icon="home">Home</a>
+
+         <h1>Menu Main Page</h1>
+
+    </div>
+    <div data-role="content">
+        <p><a href="#AppetizerPopup" data-rel="popup" data-role="button">Appetizers</a>
+        </p>
+        <div data-role="popup" id="AppetizerPopup">
+            <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="b">
+                <li>French Fries</li>
+                <li>Sweet Potato Fries</li>
+                <li>Spinich Dip</li>
+            </ul>
+        </div>
+        <p><a href="#SaladPopup" data-rel="popup" data-role="button"> Salad </a>
+        </p>
+        <div data-role="popup" id="SaladPopup">
+            <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="b">
+                <li>Garden Salad</li>
+                <li>Ceaser Salad</li>
+            </ul>
+        </div>
+        <p><a href="#MainCoursePopup" data-rel="popup" data-role="button"> Main Course </a></p>
+        <div data-role="popup" id="MainCoursePopup">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="b">
+            <li>Chicken Pasta</li>
+            <li>Chicken Sandwich</li>
+        </ul>
+        </div>
+            <a href="#popupDessert" data-rel="popup" data-role="button">Dessert</a>
+
+        <div data-role="popup" id="popupDessert">Cheesecake
+            <img src="http://4.bp.blogspot.com/-ejzfChmuuH4/Tpr9SAieYsI/AAAAAAAABN4/TZwGNaWRqOI/s400/pumpkin+cheesecake+cake.jpg">
+        </div>
+            
+    
+            <div data-role="page" id="CateringEventPage">
+            <div data-role="header"> <a data-rel="back" data-icon="home">Home</a>
+
+                 <h1>Find A Location </h1>
+
+            </div>
+            <div data-role="content"></div>
+        </div>

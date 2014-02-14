@@ -1,0 +1,114 @@
+#AboutUs
+ {
+    word-wrap: normal; 
+    width: 510px;
+    height: 150px;
+    position: relative;
+    left: 40px;
+}
+#OrderOnline
+{
+    width: 150px;
+    position: Left;
+    right:200px;
+        
+}
+#btnItems
+{
+    width:20px;
+    height: 20px;
+}
+#Weather {
+    width:350px;
+    height:300px;
+    margin-top:5px;
+    left:5px;
+    padding:0px;
+    color: #000000; 
+        
+      }
+#map
+{
+    width:350px;
+    height:300px;
+    margin-top:5px;
+    left:5px;
+    padding:0px;
+    position:relative;
+    
+}
+#map-canvas {
+        height: 100%;
+        margin: 0px;
+    margin-right: 400px;
+        padding: 0px
+      }
+      #panel {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        margin-left: -180px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+      }
+#directions-panel {
+        height: 100%;
+        font-size: 12px;
+        float: right;
+        width: 390px;
+        overflow: auto;
+      }
+#control {
+        background: #fff;
+        padding: 5px;
+        font-size: 14px;
+        font-family: Arial;
+        border: 1px solid #ccc;
+        box-shadow: 0 2px 2px rgba(33, 33, 33, 0.4);
+        display: none;
+      }
+body {
+    margin:20px;
+}
+h1 {
+    font-size: 2em;
+}
+
+h1:hover {
+    cursor: pointer;
+    color: #f00;
+}
+
+h1:active {
+    color:#555;
+}
+
+#write {
+    font-size: em;
+    color: #ff8800;
+}
+#menuitemprice {
+    font-size: 1em;
+    color: #ff8800;
+}
+input {
+    outline: none;
+     
+        margin: 0px;
+    margin-right: 400px;
+        padding: 4px
+    
+}
+#chart
+{
+    position : absolute;
+  left : 0;
+  width : 150px;
+  margin-left : 10px;
+  margin-top : 20px;
+  color : #000000;
+  padding : 3px;
+}
+}
